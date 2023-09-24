@@ -1,0 +1,453 @@
+{
+    "PSDataStruct": [
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129036",
+            "IsChecked": true,
+            "Description": "Une autre description",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129036",
+            "IsChecked": true,
+            "Description": "Une autre description",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129036",
+            "IsChecked": true,
+            "Description": "Une autre description",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": false,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        },
+        {
+            "PGNText": "129035",
+            "IsChecked": true,
+            "Description": "GNSS position rapid update",
+            "SentencesDataStruct": [
+                {
+                    "Id": 1,
+                    "Text": "AAA",
+                    "IsActivated": false
+                },
+                {
+                    "Id": 2,
+                    "Text": "BBB",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 3,
+                    "Text": "CCC",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 4,
+                    "Text": "DDD",
+                    "IsActivated": true
+                },
+                {
+                    "Id": 5,
+                    "Text": "EEE",
+                    "IsActivated": true
+                }
+            ]
+        }
+    ]
+}

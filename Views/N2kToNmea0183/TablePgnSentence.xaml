@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DPnmea.Views.N2kToNmea0183"
+             xmlns:vm="clr-namespace:DPnmea.ViewModels.N2kToNmea0183"
              xmlns:local1="clr-namespace:DPnmea.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="500">
 
-
+    
     <Grid Height="596" Width="500">
 
         <Grid.RowDefinitions>
@@ -56,9 +57,17 @@
                             <ColumnDefinition Width="1"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock VerticalAlignment="Center" Text="En." Grid.Column="0" Margin="10,0,0,0" />
+                        <TextBlock VerticalAlignment="Center" Text="En." Grid.Column="0" Margin="10,0,0,0">
+                            <TextBlock.InputBindings>
+                                <MouseBinding MouseAction="LeftClick" Command="{Binding SortCommand}"/>
+                            </TextBlock.InputBindings>
+                        </TextBlock>
                         <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="0,0,1,0" RenderOptions.EdgeMode="Aliased"/>
-                        <TextBlock VerticalAlignment="Center" Text="PGN" Grid.Column="2" Margin="10,0,0,0" />
+                        <TextBlock VerticalAlignment="Center" Text="PGN" Grid.Column="2" Margin="10,0,0,0">
+                            <TextBlock.InputBindings>
+                                <MouseBinding MouseAction="LeftClick" Command="{Binding SortPgnCommand}"/>
+                            </TextBlock.InputBindings>
+                        </TextBlock>
                         <Border  Grid.Column="3" BorderBrush="LightGray" BorderThickness="0,0,1,0" RenderOptions.EdgeMode="Aliased"/>
                         <TextBlock VerticalAlignment="Center" Text="Name" Grid.Column="4" Margin="10,0,0,0" />
                     </Grid>
@@ -67,7 +76,7 @@
                     <!-- Contenu -->
 
                     <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,1">
-                        <ItemsControl ItemsSource="{Binding PgnSentenceLineList}" HorizontalAlignment="Left">
+                        <ItemsControl ItemsSource="{Binding PgnSentenceLineListView}" HorizontalAlignment="Left">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <StackPanel Orientation="Vertical"/>

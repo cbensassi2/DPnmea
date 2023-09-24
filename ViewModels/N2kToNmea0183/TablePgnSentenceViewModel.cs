@@ -6,11 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows;
+using System.Windows.Data;
 
 namespace DPnmea.ViewModels.N2kToNmea0183
 {
@@ -18,23 +21,23 @@ namespace DPnmea.ViewModels.N2kToNmea0183
     {
         public ObservableCollection<LinePgnSentenceViewModel> PgnSentenceLineList { get; set; }
 
+        public ListCollectionView PgnSentenceLineListView { get; set; }
+
         public TablePgnSentenceViewModel(string jsonInput)
         {
-
-            var data = JsonConvert.DeserializeObject<TablePSDataStruct>(jsonInput);
-            List<PgnSentenceDataStruct> PgnSentences = data.PSDataStruct;
-
             PgnSentenceLineList = new ObservableCollection<LinePgnSentenceViewModel>();
+            LoadJsonData(jsonInput);
+            PgnSentenceLineListView = new ListCollectionView(PgnSentenceLineList);
+        }
 
-            foreach (PgnSentenceDataStruct item in PgnSentences)
+        private void Child_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsChecked")
             {
-                // Créer un nouveau ViewModel pour chaque élément et ajoute-le à la collection
-                var newItem = new LinePgnSentenceViewModel(JsonConvert.SerializeObject(item));
-                
-                PgnSentenceLineList.Add(newItem);
+                // Mettre à jour CheckedCount ici
+               
+               ActifPGN = PgnSentenceLineList.Count(x => x.IsChecked);
             }
-
-            TotalPGN = PgnSentenceLineList.Count;
         }
 
 
@@ -58,7 +61,7 @@ namespace DPnmea.ViewModels.N2kToNmea0183
             get { return $"Rx PGN Enable List ({_totalPGN} PGNs)"; }
         }
 
-        private int _actifPGN = 10;
+        private int _actifPGN = 0;
 
         public int ActifPGN
         {
@@ -76,7 +79,7 @@ namespace DPnmea.ViewModels.N2kToNmea0183
 
         public string ActifPGNTexte
         {
-            get { return $"Enabled:{_actifPGN}/{_totalPGN}"; }
+            get { return $"Enabled: {_actifPGN}/{_totalPGN}"; }
         }
 
 
@@ -89,8 +92,98 @@ namespace DPnmea.ViewModels.N2kToNmea0183
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void LoadJsonData(string jsonInput)
+        {
+            var data = JsonConvert.DeserializeObject<TablePSDataStruct>(jsonInput);
+            List<PgnSentenceDataStruct> PgnSentences = data.PSDataStruct;
+            PgnSentenceLineList.Clear();
+            ActifPGN = 0; // Réinitialiser le compteur
+            TotalPGN = 0;
+
+            foreach (PgnSentenceDataStruct item in PgnSentences)
+            {
+                var newItem = new LinePgnSentenceViewModel(JsonConvert.SerializeObject(item));
+                newItem.PropertyChanged += Child_PropertyChanged;
+                TotalPGN++;
+                if (newItem.IsChecked)
+                    ActifPGN++;
+                PgnSentenceLineList.Add(newItem);
+            }
+            
+        }
+
 
         /***********************************************  Gestion des cliques sur les bouttons *******************************************************/
+
+
+        private ICommand _sortPgnCommand;
+
+        public ICommand SortPgnCommand
+        {
+            get
+            {
+                if (_sortPgnCommand == null)
+                {
+                    _sortPgnCommand = new RelayCommand(param => this.SortPgnList(), param => true);
+                }
+                return _sortPgnCommand;
+            }
+        }
+
+        private bool _isPgnSortedAscending = true; // Pour garder une trace de l'ordre de tri des PGN
+
+        private void SortPgnList()
+        {
+            PgnSentenceLineListView.SortDescriptions.Clear(); // Effacer les anciennes descriptions de tri
+
+            if (_isPgnSortedAscending)
+            {
+                PgnSentenceLineListView.SortDescriptions.Add(new SortDescription("PGNAsInt", ListSortDirection.Ascending));
+            }
+            else
+            {
+                PgnSentenceLineListView.SortDescriptions.Add(new SortDescription("PGNAsInt", ListSortDirection.Descending));
+            }
+            PgnSentenceLineListView.Refresh();
+            _isPgnSortedAscending = !_isPgnSortedAscending; // Inverser l'ordre pour le prochain clic
+        }
+
+
+
+        private ICommand _sortCommand;
+
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_sortCommand == null)
+                {
+                    _sortCommand = new RelayCommand(param => this.SortList(), param => true);
+                }
+                return _sortCommand;
+            }
+        }
+
+        private bool _isSortedAscending = true; // Pour garder une trace de l'ordre de tri
+
+        private void SortList()
+        {
+            PgnSentenceLineListView.SortDescriptions.Clear(); // Effacer les anciennes descriptions de tri
+
+            if (_isSortedAscending)
+            {
+                PgnSentenceLineListView.SortDescriptions.Add(new SortDescription("IsChecked", ListSortDirection.Descending));
+            }
+            else
+            {
+                PgnSentenceLineListView.SortDescriptions.Add(new SortDescription("IsChecked", ListSortDirection.Ascending));
+            }
+            PgnSentenceLineListView.Refresh();
+            _isSortedAscending = !_isSortedAscending; // Inverser l'ordre pour le prochain clic
+        }
+
+
+
 
         private ICommand _applyDefaultsToHardwareCommand;
 
@@ -108,8 +201,19 @@ namespace DPnmea.ViewModels.N2kToNmea0183
 
         private void ApplyDefaultsToHardware()
         {
-            // Le code pour appliquer les paramètres par défaut au matériel
-            Console.WriteLine("bouton apply default to hardware de l'onglet Nmea2000 ToString() nmea0183 as ExportedTypeExtensions ciliqué");
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir réinitialiser aux valeurs par défaut ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+
+            string defaultJsonPath = "Resources/defaultConfig.json"; // Ajustez le chemin selon votre structure de dossier
+            string defaultConfig = File.ReadAllText(defaultJsonPath);
+            LoadJsonData(defaultConfig);
+            Console.WriteLine("Paramètres réinitialisés aux valeurs par défaut.");
+            }
+            else
+            {
+                Console.WriteLine("Réinitialisation annulée par l'utilisateur.");
+            }
         }
 
         private bool CanApplyDefaults()

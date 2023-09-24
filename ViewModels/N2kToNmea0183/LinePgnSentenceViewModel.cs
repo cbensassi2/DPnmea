@@ -12,7 +12,7 @@ namespace DPnmea.ViewModels.N2kToNmea0183
     internal class LinePgnSentenceViewModel : INotifyPropertyChanged
     {
 
-
+        public int PGNAsInt => int.TryParse(PGNText, out int result) ? result : 0;
 
         private bool _isChecked;
         private string _pgnText;
