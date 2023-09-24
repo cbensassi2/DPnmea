@@ -1,0 +1,29 @@
+﻿<!-- GlobalStyles.xaml -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Définition de couleurs -->
+    <SolidColorBrush x:Key="BorderColor1" Color="#f4f5f6"/>
+    <SolidColorBrush x:Key="BorderColor2" Color="LightGray"/>
+   
+
+
+
+    <SolidColorBrush x:Key="SentenceActiveBackground">#f3ffea</SolidColorBrush>
+    <SolidColorBrush x:Key="PgnSentenceLineDes" Color="#fafafa"/>
+
+
+
+
+
+
+
+    <!-- Définition de styles -->
+    
+    <Style x:Key="MyButtonStyle" TargetType="Button">
+        <!-- Propriétés du style -->
+    </Style>
+
+    <!-- Etc. -->
+
+</ResourceDictionary>

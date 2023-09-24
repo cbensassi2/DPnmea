@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="DPnmea.Views.N2kToNmea0183.Sentence"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DPnmea.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="70">
+    <Grid Width="65" Height="20" Margin="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.Style>
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Style.Triggers>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsChecked}" Value="True"/>
+                            <Condition Binding="{Binding IsEnabled}" Value="True"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Background" Value="{StaticResource SentenceActiveBackground}"/>
+                    </MultiDataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
+
+        <CheckBox HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" IsChecked="{Binding IsChecked}" />
+        <TextBlock Grid.Column="1" Text="{Binding Text}" Margin="0,0,0,0" VerticalAlignment="Center" >
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <!-- Style par défaut -->
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Style.Triggers>
+                        <!-- Déclencheur pour activer le style lorsque IsVariableActive est faux -->
+                        <DataTrigger Binding="{Binding IsChecked}" Value="False">
+                            <Setter Property="Foreground" Value="LightGray"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                            <Setter Property="Foreground" Value="LightGray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+
+            <TextBlock.ToolTip>
+                <ToolTip Placement="Right">
+                    <StackPanel>
+                        <TextBlock Text="Hey, je suis une explication!" FontWeight="Bold"/>
+                        <TextBlock Text="Je peux contenir encore plus d'infos si tu veux."/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBlock.ToolTip>
+            
+        </TextBlock>
+    </Grid>
+</UserControl>
