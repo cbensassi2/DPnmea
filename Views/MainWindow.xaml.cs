@@ -40,7 +40,7 @@ namespace DPnmea.Views
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
             AllocConsole();
             InitializeComponent();
-
+            this.MaxHeight = SystemParameters.WorkArea.Height;
             //this.DataContext = new MainWindowViewModel();
 
         }

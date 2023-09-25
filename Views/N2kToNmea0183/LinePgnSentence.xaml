@@ -10,7 +10,7 @@
 
     </UserControl.Resources>
 
-    <Grid Width="500" Height="51" UseLayoutRounding="True">
+    <Grid Width="500" Height="43" UseLayoutRounding="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="1"/>
@@ -87,7 +87,7 @@
                 <Border Grid.Row="1" BorderBrush="{StaticResource BorderColor1}" BorderThickness="0,1,0,0" RenderOptions.EdgeMode="Aliased" />
 
                 <!-- Ligne d'en bas : UserControl ContainerCheckBoxWithSentence -->
-                <local:ListSentences Grid.Row="2" DataContext="{Binding ListSentences}" VerticalAlignment="Center" Margin="10,0,0,0" IsEnabled="{Binding IsEnabled}"/>
+                <local:ListSentences Grid.Row="2" DataContext="{Binding ListSentences}" VerticalAlignment="Center" Margin="3,0,0,0" IsEnabled="{Binding IsEnabled}"/>
             </Grid>
 
         </Grid>

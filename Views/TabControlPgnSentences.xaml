@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DPnmea.Views.N2kToNmea0183"
              mc:Ignorable="d" 
-             d:DesignHeight="650" d:DesignWidth="550">
-    <Grid Width="550" Height="650">
-        <TabControl>
-            <TabItem Header="NMEA 2000 to NMEA 0183" Width="200" Margin="-6,-2,-2,0" >
+             d:DesignHeight="750" d:DesignWidth="550">
+    <Grid Width="550" >
+        <TabControl Margin="0,0,0,10">
+            <TabItem Header="NMEA 2000 to NMEA 0183" Width="200" Padding="6" Margin="-6,-2,-2,0" >
                 <local:TablePgnSentence/>
             </TabItem>
             <TabItem Header="NMEA 0183 to NMEA 2000" Width="200">

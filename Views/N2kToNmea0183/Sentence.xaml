@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DPnmea.Views"
              mc:Ignorable="d" 
              d:DesignHeight="20" d:DesignWidth="70">
-    <Grid Width="65" Height="20" Margin="2">
+    <Grid Width="65" Height="20" Margin="0,0,8,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="*"/>

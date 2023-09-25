@@ -7,15 +7,15 @@
              xmlns:vm="clr-namespace:DPnmea.ViewModels.N2kToNmea0183"
              xmlns:local1="clr-namespace:DPnmea.Resources"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="500">
+             d:DesignHeight="643" d:DesignWidth="550">
 
     
-    <Grid Height="596" Width="500">
+    <Grid  Margin="10">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
         <!-- Description -->
 
@@ -34,8 +34,8 @@
         </Grid>
 
 
-        <GroupBox Grid.Row="1" Header="{Binding TotalPGNText}" Padding="3,5">
-            <Border   BorderBrush="Black" BorderThickness="1" RenderOptions.EdgeMode="Aliased">
+        <GroupBox Grid.Row="1" Header="{Binding TotalPGNText}" Padding="3,2" HorizontalAlignment="Center">
+            <Border  Panel.ZIndex="100" BorderBrush="Black" BorderThickness="1"  RenderOptions.EdgeMode="Aliased">
                 <Grid >
                     <Grid.RowDefinitions>
 
@@ -75,7 +75,7 @@
                     <Border  Grid.Row="1" BorderBrush="LightGray" BorderThickness="0,1,0,0" RenderOptions.EdgeMode="Aliased"  />
                     <!-- Contenu -->
 
-                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,1">
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,0,1,1">
                         <ItemsControl ItemsSource="{Binding PgnSentenceLineListView}" HorizontalAlignment="Left">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -95,12 +95,12 @@
         </GroupBox>
 
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Margin="0,0,0,10">
             <!-- Texte à l'extrême gauche -->
             <TextBlock Text="{Binding ActifPGNTexte}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <!-- Bouton à l'extrême droite -->
-            <Button Content="Apply defaults to hardware" Command="{Binding ApplyDefaultsToHardwareCommand}" HorizontalAlignment="Right" VerticalAlignment="Stretch" Padding="15,0" Margin="0,5,0,0"/>
+            <Button Content="Apply defaults to hardware" Command="{Binding ApplyDefaultsToHardwareCommand}" HorizontalAlignment="Right" MaxHeight="30" VerticalAlignment="Stretch" Padding="15,0" Margin="0,5,0,0"/>
         </Grid>
 
 
